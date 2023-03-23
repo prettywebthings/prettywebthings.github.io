@@ -7,25 +7,14 @@
         <title>Pretty Web Things</title>
         <script>
             ;(function () {
-                var redirect = sessionStorage.redirect
+                const redirect = sessionStorage.redirect
                 delete sessionStorage.redirect
                 if (redirect && redirect != location.href) {
-                    history.replaceState(null, null, redirect)
-                    // REMOVE THIS - just showing the redirect route in the UI
-                    document.body.setAttribute(
-                        'message',
-                        'This page was redirected by 404.html, from the route: ' + redirect
-                    )
-                } else {
-                    // REMOVE THIS - just showing the redirect route in the UI
-                    document.body.setAttribute(
-                        'message',
-                        'This page was loaded directly from the index.html file'
-                    )
+                    history.replaceState(null, null, redirect)                    
                 }
             })()
         </script>
-      <script type="module" crossorigin src="/assets/index-55e1811f.js"></script>
+      <script type="module" crossorigin src="/assets/index-1d2e6b19.js"></script>
       <link rel="stylesheet" href="/assets/index-c7c74cda.css">
     </head>
     <body>
