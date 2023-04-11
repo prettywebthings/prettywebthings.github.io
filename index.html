@@ -14,10 +14,63 @@
                 }
             })()
         </script>
-      <script type="module" crossorigin src="/assets/index-6e29c91b.js"></script>
-      <link rel="stylesheet" href="/assets/index-3036e353.css">
+        <script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.4/jquery.min.js"></script>
+
+        <script>
+            !function (t) { t.fn.bubbles = function (n) { function o(t) { var n = document.createElement("div"); if (t in n.style) return t; for (var o = ["Moz", "Webkit", "O", "ms"], i = t.charAt(0).toUpperCase() + t.substr(1), e = 0; e < o.length; ++e) { var a = o[e] + i; if (a in n.style) return a } } function i() { n.transition = o("transition"), n.transform = o("transform") } var e = this, n = t.extend({ maxWidth: 1, maxHeight: 1, minDuration: 1e4, deltaDuration: 11e3, bubbleCount: 10, sizeCount: 3, colorCount: 2, containerClass: "bubbles", bubbleClass: "bubble", bubbleElement: "span", easing: "ease-in-out", bigSize: [125, 125], setBounds: function () { this.heightBounds = Math.floor(e.outerHeight() * this.maxHeight) - this.bigSize[1], this.widthBounds = Math.floor(e.outerWidth() * this.maxWidth) - this.bigSize[0] }, bubbleFactory: function () { var n, o, i, a, s; e.wrapInner('<div style="position: relative;"></div>'); for (var h = 0; h < this.bubbleCount; h++)n = Math.floor(Math.random() * this.sizeCount) + 1, o = Math.floor(Math.random() * this.colorCount) + 1, a = Math.floor(Math.random() * this.widthBounds), s = Math.floor(Math.random() * this.heightBounds), i = t("<" + this.bubbleElement + " />", { "class": this.bubbleClass + " s" + n + " c" + o, style: this.transform + ": translate(" + a + "px," + s + "px);" }), e.prepend(i) }, animate: function () { e.children(this.bubbleElement + ".bubble").each(function () { var t = this; setTimeout(function () { n.move(t) }, 0) }) }, move: function (o) { var i, e, a, s; i = Math.floor(Math.random() * this.widthBounds), e = Math.floor(Math.random() * this.heightBounds), a = Math.floor(this.minDuration + Math.random() * this.deltaDuration), s = Math.floor(.001 * a), css = this.transform + ": translate(" + i + "px," + e + "px); ", css += this.transition + ": " + this.transform + " " + s + "s " + this.easing + ";", t(o).attr("style", css).promise().done(function () { setTimeout(function () { n.move(o) }, a) }) } }, n); return e.each(function () { i(), n.setBounds(), e.addClass(n.containerClass), n.bubbleFactory(), n.animate() }) } }(jQuery);
+
+        </script>
+        <style>
+            .bubbles {
+                position: relative;
+                overflow: hidden;
+            }
+        
+            .bubble {
+                display: block;
+                position: absolute;
+                border-radius: 50%;
+                top: 0;
+                left: 0;
+            }
+        
+            /* sizes */
+            .s1 {
+                width: 50px;
+                height: 50px;
+            }
+        
+            .s2 {
+                width: 100px;
+                height: 100px;
+            }
+        
+            .s3 {
+                width: 125px;
+                height: 125px;
+            }
+        
+            /* colors */
+            .c1 {
+                border: 10px solid #f9c829;
+            }
+        
+            .c2 {
+                border: 10px solid #fac900;
+            }
+            #bubbles {
+                width: 100%;
+                height: 400px;
+            }
+        </style>
+      <script type="module" crossorigin src="/assets/index-2a35dfa1.js"></script>
+      <link rel="stylesheet" href="/assets/index-6c8fcbf9.css">
     </head>
     <body>
+        <!-- <div id="bubbles" ></div>
+        <script>
+            $('#bubbles').bubbles();
+        </script> -->
         <div id="app"></div>
         
     </body>
